@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five9 Maintenance Notice Form</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<style>
+  body {
+    font-family: Calibri, sans-serif; /* Set font to Calibri */
+    background-image: url(./doometernal.jpg);
+  } 
+  td {
+        border: 1px solid black;
+        padding: 2px;
+        vertical-align: top; /* Align content to the top */
+        text-align: left; /* Align content to the left */
+        background-color: white;
+        opacity: 70%;
+    }
+h2{
+  color: white;
+}
+
+.notice{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#date{
+    width: 100px;
+    min-width: 100px;
+}
+
+#CRdetails{
+    width: 300px;
+    min-width: 300px;
+}
+
+#Notice{
+    width: 600px;
+    min-width: 600px;
+    
+}
+
+
+/* <td id="date" >Date</td>
+    <td id="CRdetails">CRdetails</td>
+    <td id="Notice" width="600">Notice</td> */
+
+</style>
+
+<body>
+
+<h2>Maintenance Notice Form</h2>
+<hr>
+
+<br>
+<div id="form">
+<a href=nonstandardcomms.html><input class="btn btn-primary" type ="submit" value ="Non-Standard Comms"></a>
+
+<br><br>
+<table>
+<td>
+<form id="maintenanceForm">
+    <label for="region"><b>Region</b>:</label>
+    <select class="form-select-sm" id="region">
+        <option value=" "></option>
+        <option value="US/CA">US/CA</option>
+        <option value="UK/EU">UK/EU</option>
+    </select>
+    <br>
+    <br>
+    <select class="form-select-sm" id="CRnumber2">
+    <option value = "CR-">CR- </option>
+    <option value = "PE-">PE- </option>
+    <option value = "">NA</option>
+  </option></select>
+
+
+    <input type="text" id="CRnumber" name="CRnumber" placeholder="xxxx" >
+    <label for="IMPACT"><b>IMPACT:</b></label>
+    <select class="form-select-sm" id="IMPACT">
+      <option value = "IMPACT CANNOT BE AVOIDED">IMPACT CANNOT BE AVOIDED</option>
+      <option value = "MGR">MGR</option>
+      <option value = "MM SWITCHOVER">MM SWITCHOVER</option>
+    </option></select><br><br>
+
+    <label for="CRDescription"><b>CR Description:</b></label><br>
+    <textarea id="CRDescription" name="CRDescription" ></textarea><br><br>
+    <label for="maintenancetype"><b>Maintenance Type:</b></label><br>
+    <select class="form-select-sm" id="maintenancetype">
+        <option value = "Five9 Maintenance Notice">Normal</option>
+        <option value = "Five9 Emergency Maintenance Notice">Emergency</option>
+    </select><br><br>
+
+    <label for="preposition" ><b>Preposition:  </b></label>
+    <input type="text" id="preposition" name="preposition" placeholder="on, tonight, tomorrow, etc.," >
+
+    <label for="maintenanceDay"><b>Day:</b></label>
+    <select class="form-select-sm" id = "maintenanceDay"><option value = "Monday">Monday</option>
+        <option value = "Tuesday">Tuesday</option>
+        <option value = "Wednesday">Wednesday</option>
+        <option value = "Thursday">Thursday</option>
+        <option value = "Friday">Friday</option>
+        <option value = "Saturday">Saturday</option>
+        <option value = "Sunday">Sunday</option></select>
+
+    <label for="maintenanceDate" >, </label>
+    <input type="date" id="maintenanceDate" required><br>
+    <p id="dateInWords"></p>
+    
+    <label for="time"> <b>Time: </b></label><br>
+    <input type="text" id="time" name="time" placeholder="HH:MM AM/PM">
+
+    <label for="timezone"></label>
+    <select class="form-select-sm" id="timezone">
+        <option value = "Pacific time">Pacific time</option>
+        <option value = "UTC">UTC</option>
+    </select>
+    <br><br>
+
+    <label for="duration"><b>Duration:</b></label><br>
+    <input type="number" id="duration" name="duration" ><br><br>
+
+    <label for="location"><b>Impacted Location (Header):</b></label><br>
+    <!--<input type="text" id="location" name="location"><br><br>-->
+        <select class="form-select-sm" id = "location">
+        <option value = "US West">Santa Clara</option>
+        <option value = "US East">Atlanta</option>
+        <option value = "US East/US West">Atlanta/Santa Clara</option>
+        <option value = "Montreal">Montreal</option>
+        <option value = "London">London</option>
+        <option value = "Frankfurt">Frankfurt</option>
+        <option value = "Netherlands">Netherlands</option>
+        <option value = "Frankfurt and Netherlands">Frankfurt and Netherlands</option>
+        <option value = "">NA</option>
+        
+    </select>
+    <br>
+    <label for="location1"></label><br>
+    <input type="text" id="location1" name="location1" placeholder="Impacted Location (If NA)">
+    <br>
+    
+    <label for="datacenter1"></label><br>
+    <input type="text" id="datacenter1" name="datacenter1" placeholder="Datacenter (If NA)">
+    <br><br>
+    
+    <label for="impact"><b>Impact on Service:<b></b></label><br>
+    <select class="form-select-sm" id="impact">
+        <option value="We will move your domain to an alternate data center, one hour before the start of maintenance. Once maintenance is complete, we will move your domain back to your primary data center. During this process, all users will experience two short disconnections to the server after call completion but reconnect automatically." id="Move to GR -Double">Move to GR -Double
+        </option>
+        <option value="We will move your domain to an alternate data center one hour before the start of maintenance. During this process, all users will experience a short disconnection from the server after call completion but will reconnect automatically." id="Move to GR - Single (Pre-maintenance)">Move to GR - Single (Pre-maintenance)
+        </option>
+        <option value="After the maintenance, we will move your domain to an alternate data center one hour before the start of maintenance. During this process, all users will experience a short disconnection from the server after call completion but will reconnect automatically." id="Move to GR - Single (Post-maintenance)">Move to GR - Single (Post-maintenance)
+        </option>
+        <option value="During the maintenance, agents and Five9 users can remain logged in. All users will experience one short disconnection from the server after call completion but will reconnect automatically." id="MM Switchover">MM Switchover
+        </option>
+        <option value="During maintenance, customers may experience disconnection from the Verint application and recording will not be impacted." id="Verint-Impact cannot be avoided (No Impact to Recording)">Verint-Impact cannot be avoided (No Impact to Recording)</option>
+        <option value="During maintenance, customers may experience disconnection from the Verint application and some calls will not be recorded." id="Verint-Impact cannot be avoided (With Impact to Recording)">Verint-Impact cannot be avoided (With Impact to Recording)
+        </option>
+        <option value="During maintenance, customers may experience a disconnection from the Verint application, and some calls will not be recorded. <br><br> Additionally, historical adherence data that is being migrated to new tables supporting big-integer (BIGINT) IDs will be temporarily unavailable until the migration process is complete. This migration occurs overnight, and the oldest files may take up to seven days to be fully available." id="Verint-Impact cannot be avoided (Impact to Recording and Adherence Data)">Verint-Impact cannot be avoided (Impact to Recording and Adherence Data)
+        </option>
+        <option value="During maintenance, customers may experience disconnection from the Five9 WFO applications." id="VO/IA-Impact cannot be avoided">VO/IA-Impact cannot be avoided
+        </option>
+        <option value="">NA
+        </option>
+    </select>
+    <br><br>
+    <textarea id="impact1" name="impact1" placeholder="Impact (if NA)"></textarea>
+    <br><br>
+    <textarea id="action1" name="action1" placeholder="Action (if NA)"></textarea>
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Generate Maintenance Notice">
+    <br><br>
+    <input class="btn btn-primary" type="reset" value="Clear Form">
+</form>
+</td>
+</table>
+</div>
+<br>
+
+<div class="notice">
+  <table border="1" cellpadding="0" cellspacing="0" id="table">
+    <td id="date" >Date</td>
+    <td id="CRdetails">CRdetails</td>
+    <td id="Notice">Notice</td>
+  </table>
+  </div>
+
+<script>
+
+
+document.getElementById("maintenanceForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var region = document.getElementById("region").value;
+    var CRkey = document.getElementById("CRnumber").value;
+    var CRkey2 = document.getElementById("CRnumber2").value;
+    var IMPACT = document.getElementById("IMPACT").value;
+    var CRdesc = document.getElementById("CRDescription").value;
+    var maintenancetype = document.getElementById("maintenancetype").value;
+    var preposition = document.getElementById("preposition").value;
+    var maintenanceDay = document.getElementById("maintenanceDay").value;
+    var dateInWords = document.getElementById("dateInWords").value;
+    var time = document.getElementById("time").value;
+    var timezone = document.getElementById("timezone").value;
+    var duration = document.getElementById("duration").value;
+    var location = document.getElementById("location").value;
+    var location1 = document.getElementById("location1").value;
+    var datacenter1 = document.getElementById("datacenter1").value;
+    var impact = document.getElementById("impact").value;
+    var impact1 = document.getElementById("impact1").value;
+    var action = "";
+    var action1 = document.getElementById("action1").value;
+    var maintenance = "maintenance";
+    var datacenter = "";
+    var communityLink = "";
+
+    //Changes date format into words
+    var maintenanceDate = document.getElementById("maintenanceDate");
+    var selectedDate = new Date(maintenanceDate.value);
+    selectedDate.setDate(selectedDate.getDate() + 1);
+    var longDate = selectedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('maintenanceDate').textContent = longDate;
+
+
+    //Returns an error if no region is selected
+    if (region ==" "){
+        alert("Please select a Region.");
+	return;
+    }
+
+    //Returns an error if there is a region/timezone mismatch
+    if (region =="US/CA" && timezone == "UTC"){
+        alert("Region/Timezone mismatch. Please select the appropriate region/timezone.");
+	return;
+    } else if (region == "UK/EU" && timezone == "Pacific time"){
+        alert("Region/Timezone mismatch. Please select the appropriate region/timezone.");
+	return;
+    } 
+
+    //Autofills header (emergency/normal)
+    if (maintenancetype=="Five9 Emergency Maintenance Notice"){
+        var maintenance = "emergency maintenance";
+    }
+    //Returns an error if there is a maintenance day/maintenance type mismatch 
+    if ((maintenanceDay !== "Wednesday" && maintenanceDay !== "Saturday") && maintenancetype === "Five9 Maintenance Notice"){
+        alert(maintenanceDay + " does not fall within our normal maintenance window. Change the maintenance type to emergency if this is correct.");
+        return;
+    }
+
+    //autofills datacenter field
+    if (location=="US West"){
+        var datacenter = "US West Datacenter (Santa Clara)";
+    }else if (location=="US East"){
+        var datacenter = "US East Datacenter (Atlanta)";
+    }else if (location=="US East/US West"){
+        var datacenter = "US East/US West Datacenters (Atlanta/Santa Clara)";
+    }else if (location=="Montreal"){
+        var datacenter = "Montreal Datacenter";
+    }else if (location=="London"){
+        var datacenter = "London Datacenter";
+    }else if (location=="Frankfurt"){
+        var datacenter = "Frankfurt Datacenter";
+    }else if (location=="Netherlands"){
+        var datacenter = "Netherlands Datacenter";
+    }else if (location=="Frankfurt and Netherlands"){
+        var datacenter = "Frankfurt and Netherlands Datacenter";
+    }
+
+    //autofills community link field
+    if(location=="US West" || location=="US East"){
+        var communityLink = "https://login.five9.com";
+    }else if (location=="Frankfurt" || location=="Netherlands"){
+        var communityLink = "https://login.eu.five9.com";
+    }else if (location=="Frankfurt and Netherlands"){
+        var communityLink = "https://login.eu.five9.com";
+    }else if (location=="US East/US West"){
+        var communityLink = "https://login.five9.com";
+    }else if (location=="Montreal"){
+        var communityLink = "https://login.five9.ca";
+    }else if (location=="London"){
+        var communityLink = "https://login.five9.eu";
+    }
+
+    //autofills the action field
+    if(impact=="We will move your domain to an alternate data center, one hour before the start of maintenance. Once maintenance is complete, we will move your domain back to your primary data center. During this process, all users will experience two short disconnections to the server after call completion but reconnect automatically."
+        || impact=="We will move your domain to an alternate data center one hour before the start of maintenance. During this process, all users will experience a short disconnection from the server after call completion but will reconnect automatically."
+        || impact=="After the maintenance, we will move your domain to an alternate data center one hour before the start of maintenance. During this process, all users will experience a short disconnection from the server after call completion but will reconnect automatically."
+        || impact=="During the maintenance, agents and Five9 users can remain logged in. All users will experience one short disconnection from the server after call completion but will reconnect automatically."){
+        var action ="No customer action required."
+    }if (impact=="During maintenance, customers may experience a disconnection from the Verint application, and some calls will not be recorded. <br><br> Additionally, historical adherence data that is being migrated to new tables supporting big-integer (BIGINT) IDs will be temporarily unavailable until the migration process is complete. This migration occurs overnight, and the oldest files may take up to seven days to be fully available."){
+        var action =  "After maintenance, users must log out and back into the Five9 agent application to continue recording sessions."
+    }if (impact=="During maintenance, customers may experience disconnection from the Five9 WFO applications."){
+        var action="Users must log back into the Five9 WFO applications after being disconnected."
+    }if(impact=="During maintenance, customers may experience disconnection from the Verint application and some calls will not be recorded." || impact=="During maintenance, customers may experience disconnection from the Verint application and recording will not be impacted."){
+        var action="Users must log back into the Five9 agent application after being disconnected."
+    }
+
+//var maintenanceNotice - variable for what will be produced
+    var maintenanceNotice = "<b>" + maintenancetype + "</b>" + " - " + "<b>" + location1 + location + "</b>" + "<br>" + "<br>";
+    maintenanceNotice += "We will perform" + " " + maintenance + " " + preposition + " " + "<b>" + maintenanceDay + "</b>" + ", " + "<b>" +  longDate + "</b>" + ", starting at " + "<b>" + time + " " + timezone + "</b>" + ", which could last up to " + "<b>" + duration + "</b>" + " <b>hours</b>.<br>" + "<br>";
+    maintenanceNotice += "<b>Impacted location:</b> " + "<br>" + datacenter + datacenter1 +"<br>" + "<br>";
+    maintenanceNotice += "<b>How this will affect your Five9 service:</b> " + "<br>" + impact + impact1 + "<br>" + "<br>";
+    maintenanceNotice += "<b>What you need to do:</b> " + "<br>" + action + action1 + "<br>" + "<br>";
+    maintenanceNotice += "If you have any questions, please contact our Customer Support Team by emailing " + "<a href= mailto:cases@five9.com>" + "cases@five9.com " + "</a>" + "or through Five9 Community by logging in to <a href='" + communityLink + "'>" + communityLink + "</a> and clicking on Customer Support.";
+    
+    document.getElementById("date").innerHTML = "<b>" + longDate + "</b>";
+    document.getElementById("CRdetails").innerHTML = "<b style='color: red;'>" + CRkey2+ CRkey+ "- " + IMPACT +"</b>" + "<br>" + "<br>" + "<b>" + CRdesc + "</b>" ;
+    document.getElementById("Notice").innerHTML = maintenanceNotice;
+
+
+});
+</script>
+<!-- <script>
+  // Get the form element
+  var form = document.getElementById("maintenanceForm");
+
+  // Add event listener for form submission
+  form.addEventListener("submit", function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Reset the form fields
+      form.reset();
+  }); -->
+
+</body>
+</html>

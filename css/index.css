@@ -1,0 +1,85 @@
+/* index */
+
+#header{
+  background-color: #4F6F52;
+  display: block;
+  height: auto;
+}
+
+h1{
+  color: #F5EFE6;
+  font-family: pt-serif-bold-italic;
+  font-size: 900;
+  font-weight: bolder;
+
+  .pt-serif-bold-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+
+h2{
+  color: #4F6F52;
+  font-family: pt-serif-bold-italic;
+  font-size: 900;
+  font-weight: bolder;
+
+  .pt-serif-bold-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+  
+#pheader{
+  color: #F5EFE6;
+}
+
+#navbar{
+  display: block;
+  background-color: #e3f2fd;
+  height: 35px;
+}
+
+.gamer{
+  height: 100px;
+  border: solid black;
+}
+
+.contact{
+  color: #4F6F52;
+}
+
+#telephone{
+  display: flex;
+  align-items: center;
+}
+
+.telephone{
+  background-color: black;
+  border-radius: 10%;
+  width: 30px;
+  margin: 5px;
+}
+
+.linkedin{
+  background-color:white;
+  border-radius: 10%;
+  width: 30px;
+  margin: 5px;
+}
+
+.email{
+  background-color:rgb(17, 11, 11);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10%;
+  width: 40px;
+  margin: 5px;
+}
+
+
+footer{
+  background-color: #75A47F;
+}

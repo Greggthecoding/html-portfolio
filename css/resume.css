@@ -1,0 +1,119 @@
+/* Resume */
+
+body{
+  margin: 10px;
+}
+
+.container-lg{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#telephone{
+  display: flex;
+  align-items: center;
+}
+
+.telephone{
+  background-color: black;
+  border-radius: 10%;
+  width: 30px;
+  margin: 5px;
+}
+
+.linkedin{
+  background-color:white;
+  border-radius: 10%;
+  width: 30px;
+  margin: 5px;
+}
+
+.email{
+  background-color:rgb(17, 11, 11);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10%;
+  width: 40px;
+  margin: 5px;
+}
+
+.certificate{
+  background-color:rgb(17, 11, 11);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10%;
+  width: 35px;
+  margin: 5px;
+}
+
+.education{
+  background-color:rgb(17, 11, 11);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10%;
+  width: 35px;
+  padding: 2px;
+  margin: 5px;
+}
+
+.skill{
+  background-color:rgb(17, 11, 11);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-radius: 10%;
+  width: 35px;
+  padding: 2px;
+  margin: 5px;
+}
+
+.allskills{
+  display: inline-block;
+}
+
+.grid{
+  display: inline-flex;
+}
+
+.heading{
+  font-size: large;
+}
+
+
+/* Index */
+
+/* h1{
+    font-family: pt-serif-caption-regular;
+    font-weight: bolder;
+
+
+  .pt-serif-caption-regular {
+    font-family: "PT Serif Caption", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+  } */
+
+  *{
+    margin:0;
+    padding:0;
+  }
+  
+  #header{
+      background-color: aquamarine;
+      width: 920px;
+      height: 200px;
+      display: flex;
+  }
+  
+  .resume{
+    border-radius: 10%;
+    height:30px
+  }
+  
+  
+  
+  
+  
+
+
+
